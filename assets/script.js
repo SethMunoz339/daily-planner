@@ -2,18 +2,26 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var hrEl9 = $('#hour-9')
+// let hrEl9 = "9:00 am"
 var hrEl10 = $('#hour-10')
+// let hrEl10 = "10:00 am"
 var hrEl11 = $('#hour-11')
+// let hrEl11 = "11:00 am"
 var hrEl12 = $('#hour-12')
+// let hrEl12 = "12:00 pm"
 var hrEl1 = $('#hour-1')
+// let hrEl1 = "1:00 pm"
 var hrEl2 = $('#hour-2')
+// let hrEl2 = "2:00 pm"
 var hrEl3 = $('#hour-3')
+// let hrEl3 = "3:00 pm"
 var hrEl4 = $('#hour-4')
+// let hrEl4 = "4:00 pm"
 var timeBlockEl = $('.time-block')
 var textAreaEl = $('.description')
 var saveButtonEl = $('.saveBtn')
 var timeEl= dayjs();
-$('#currentDay').text(timeEl.format('dddd, MMMM D YYYY, h:mm A'));
+$('#currentDay').text(timeEl.format('dddd, MMMM D YYYY, h:mm a'));
 
 var hrArray = [hrEl9, hrEl10, hrEl11, hrEl12, hrEl1, hrEl2, hrEl3, hrEl4]
 
@@ -36,13 +44,35 @@ $(document).ready(function() {
   // Load previously saved text from local storage
   for (var i = hrArray; i <= (hrArray); i++) {
     textAreaId = textAreaEl + i;
-    var savedText = localStorage.getItem(targetTextAreaValue);
+    var savedText = localStorage.getItem(textAreaId);
 
     if (savedText) {
       $(hrArray + textAreaId).val(JSON.parse(savedText));
       textAreaEl.append(savedText)
     }
-  }})
+  }});
+
+  function checkTime() {
+    for (var i = 0; i < hrArray.length; i++) {
+      var hour = dayjs(hrArray[i], "h:mm a");
+  
+      if (currentTime.isBefore(hour)) {
+        timeBlockEl.attr('class', 'past');
+        console.log(hrArray[i] + " is in the future.");
+      } 
+      
+      else if (currentTime.isSame(hour, "hour")) {
+        timeBlockEl.attr('class', 'present');
+        console.log(hrArray[i] + " is the present hour.");
+      } 
+      
+      else {
+        timeBlockEl.attr('class', 'future');
+        console.log(hrArray[i] + " is in the past.");
+      }
+    }
+  }
+  
 
 // $(function () {
     // TODO: Add a listener for click events on the save button. This code should
