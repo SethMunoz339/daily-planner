@@ -33,6 +33,24 @@ $(document).ready(function() {
   }));
 });
 
+function checkTime() {
+  for (var i = 0; i < hrArray.length; i++) {
+    // var hour = dayjs(hrArray[i], "h:mm a");
+    if (timeEl.isBefore(hourText)) {
+      timeBlockEl.attr('class', 'future');
+      console.log(hrArray[i] + " is in the future.");
+    }
+    else if (timeEl.isSame(hourText)) {
+      timeBlockEl.attr('class', 'present');
+      console.log(hrArray[i] + " is the present hour.");
+    }
+    else (timeEl.isAfter(hourText)); {
+      timeBlockEl.attr('class', 'past');
+      console.log(hrArray[i] + " is in the past.");
+    }
+  }
+}
+
 $(document).ready(function() {
   // Load previously saved text from local storage
   for (var i = hrArray; i <= (hrArray); i++) {
