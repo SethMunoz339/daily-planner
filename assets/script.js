@@ -2,21 +2,14 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var hrEl9 = $('#hour-9')
-// let hrEl9 = "9:00 am"
 var hrEl10 = $('#hour-10')
-// let hrEl10 = "10:00 am"
 var hrEl11 = $('#hour-11')
-// let hrEl11 = "11:00 am"
 var hrEl12 = $('#hour-12')
-// let hrEl12 = "12:00 pm"
 var hrEl1 = $('#hour-1')
-// let hrEl1 = "1:00 pm"
 var hrEl2 = $('#hour-2')
-// let hrEl2 = "2:00 pm"
 var hrEl3 = $('#hour-3')
-// let hrEl3 = "3:00 pm"
 var hrEl4 = $('#hour-4')
-// let hrEl4 = "4:00 pm"
+var hourText = $('.hour')
 var timeBlockEl = $('.time-block')
 var textAreaEl = $('.description')
 var saveButtonEl = $('.saveBtn')
@@ -52,28 +45,10 @@ $(document).ready(function() {
     }
   }});
 
-  function checkTime() {
-    for (var i = 0; i < hrArray.length; i++) {
-      var hour = dayjs(hrArray[i], "h:mm a");
   
-      if (currentTime.isBefore(hour)) {
-        timeBlockEl.attr('class', 'past');
-        console.log(hrArray[i] + " is in the future.");
-      } 
-      
-      else if (currentTime.isSame(hour, "hour")) {
-        timeBlockEl.attr('class', 'present');
-        console.log(hrArray[i] + " is the present hour.");
-      } 
-      
-      else {
-        timeBlockEl.attr('class', 'future');
-        console.log(hrArray[i] + " is in the past.");
-      }
-    }
-  }
   
-
+  console.log (timeEl)
+  console.log (hourText)
 // $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
