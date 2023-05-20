@@ -70,6 +70,11 @@ $(document).ready(function() {
     }
   }});
 
+  document.getElementById('clearButton').addEventListener('click', function() {
+    localStorage.clear();
+    alert('Appointments have been cleared. Refresh the page.');
+});
+
   
   checkTime()
 
