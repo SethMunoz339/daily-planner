@@ -5,10 +5,10 @@ var hrEl9 = $('#hour-9')
 var hrEl10 = $('#hour-10')
 var hrEl11 = $('#hour-11')
 var hrEl12 = $('#hour-12')
-var hrEl1 = $('#hour-1')
-var hrEl2 = $('#hour-2')
-var hrEl3 = $('#hour-3')
-var hrEl4 = $('#hour-4')
+var hrEl1 = $('#hour-13')
+var hrEl2 = $('#hour-14')
+var hrEl3 = $('#hour-15')
+var hrEl4 = $('#hour-16')
 var hourText = $('.hour')
 var timeBlockEl = $('.time-block')
 var textAreaEl = $('.description')
@@ -34,18 +34,22 @@ $(document).ready(function() {
 });
 
 function checkTime() {
+
+  var compareTime = dayjs().format('HH')
+// change time from text to number
   for (var i = 0; i < hrArray.length; i++) {
-    // var hour = dayjs(hrArray[i], "h:mm a");
-    if (timeEl.isBefore(hourText)) {
-      timeBlockEl.attr('class', 'future');
+    var hour = hrArray[i][0].id.replace('hour-', '')
+// change hour from text to number
+    if (compareTime < (hour)) {
+      hrArray[i][0].classList.value = 'row time-block future';
       console.log(hrArray[i] + " is in the future.");
     }
-    else if (timeEl.isSame(hourText)) {
-      timeBlockEl.attr('class', 'present');
+    else if (compareTime = (hour)) {
+      hrArray[i][0].classList.value = 'row time-block present';
       console.log(hrArray[i] + " is the present hour.");
     }
-    else (timeEl.isAfter(hourText)); {
-      timeBlockEl.attr('class', 'past');
+    else (compareTime > (hour)); {
+      hrArray[i][0].classList.value = 'row time-block past';
       console.log(hrArray[i] + " is in the past.");
     }
   }
@@ -64,7 +68,7 @@ $(document).ready(function() {
   }});
 
   
-  
+  checkTime()
   console.log (timeEl)
   console.log (hourText)
 // $(function () {
