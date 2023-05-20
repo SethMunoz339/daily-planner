@@ -44,15 +44,15 @@ console.log(compareTime)
 Number(hour)
 console.log(hour)
     if (compareTime < (hour)) {
-      hrArray[i][0].classList.value = 'row time-block future';
+      hrArray[i][0].classList.value = 'col-8 col-md-10 description future';
       console.log(hrArray[i] + " is in the future.");
     }
-    else if (compareTime = (hour)) {
-      hrArray[i][0].classList.value = 'row time-block present';
+    else if (compareTime === (hour)) {
+      hrArray[i][0].classList.value = 'col-8 col-md-10 description present';
       console.log(hrArray[i] + " is the present hour.");
     }
-    else (compareTime > (hour)); {
-      hrArray[i][0].classList.value = 'row time-block past';
+    else  {
+      hrArray[i][0].classList.value = 'col-8 col-md-10 description past';
       console.log(hrArray[i] + " is in the past.");
     }
   }
