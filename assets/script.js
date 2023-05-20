@@ -35,13 +35,13 @@ $(document).ready(function() {
 
 function checkTime() {
   
-  var compareTime = dayjs().format('HH')
+  var compareTime = Number(dayjs().format('HH'))
   
-Number(compareTime)
+
 console.log(compareTime)
   for (var i = 0; i < hrArray.length; i++) {
-    var hour = hrArray[i][0].id.replace('hour-', '')
-Number(hour)
+    var hour = Number(hrArray[i][0].id.replace('hour-', ''))
+
 console.log(hour)
     if (compareTime < (hour)) {
       hrArray[i][0].classList.value = 'col-8 col-md-10 description future';
