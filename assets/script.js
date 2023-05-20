@@ -34,12 +34,15 @@ $(document).ready(function() {
 });
 
 function checkTime() {
-
+  
   var compareTime = dayjs().format('HH')
-// change time from text to number
+  
+Number(compareTime)
+console.log(compareTime)
   for (var i = 0; i < hrArray.length; i++) {
     var hour = hrArray[i][0].id.replace('hour-', '')
-// change hour from text to number
+Number(hour)
+console.log(hour)
     if (compareTime < (hour)) {
       hrArray[i][0].classList.value = 'row time-block future';
       console.log(hrArray[i] + " is in the future.");
@@ -69,8 +72,7 @@ $(document).ready(function() {
 
   
   checkTime()
-  console.log (timeEl)
-  console.log (hourText)
+
 // $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
