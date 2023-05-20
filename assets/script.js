@@ -57,16 +57,16 @@ console.log(hour)
     }
   }
 }
-
+const hours = ['9', '10', '11', '12', '13', '14', '15', '16']
 $(document).ready(function() {
   // Load previously saved text from local storage
-  for (var i = hrArray; i <= (hrArray); i++) {
-    textAreaId = textAreaEl + i;
-    var savedText = localStorage.getItem(textAreaId);
+  for (var i = 0; i < hours.length; i++) {
+    // textAreaId = textAreaEl + i;
+    var savedText = localStorage.getItem('hour-' + hours[i]);
 
     if (savedText) {
-      $(hrArray + textAreaId).val(JSON.parse(savedText));
-      textAreaEl.append(savedText)
+      $('hour-' + hours[i]).val(JSON.parse(savedText));
+      textAreaEl[i].append(savedText)
     }
   }});
 
