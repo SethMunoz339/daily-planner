@@ -13,7 +13,7 @@ When the page opens, the user is presented with a series of rows that are differ
 
 ## Screenshot
 
-[Screenshot of Website](https://github.com/SethMunoz339/daily-planner/blob/assets/daily-planner-screenshot.png?raw=true)
+[Screenshot of Website](https://github.com/SethMunoz339/daily-planner/blob/main/assets/daily-planner-screenshot.png?raw=true)
 
 ## URL
 
